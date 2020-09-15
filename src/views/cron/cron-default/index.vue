@@ -1,4 +1,5 @@
 <template>
+  <!-- 快捷生成完全可以由自己根据需求进行定义，因此这里仅开发了部分功能 -->
   <div class="cron-default">
     <el-tabs type="border-card">
       <el-tab-pane label="天">
