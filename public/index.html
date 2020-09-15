@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--默认使用极速模式， 作用于360浏览器、QQ浏览器等国产双核浏览器 -->
+  <meta name="renderer" content="webkit"/>  
+  <!-- 默认使用极速模式，作用于其他双核浏览器 -->
+  <meta name="force-rendering" content="webkit"/>
+  <!-- 如果有安装 Google Chrome Frame 插件则默认使用Chromium内核（也就是极速模式内核），否则强制本机支持的最高版本IE内核，作用于IE浏览器： -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <!-- 手机移动端配置 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- 标题 -->
+  <title><%= VUE_APP_PROJECT_NAME %></title>
+  <!-- 项目小图标 -->
+  <link rel="icon" href="./favicon.ico">
+  <script>
+    // 验证是否为IE浏览器并且获得其版本信息
+    /**
+     * @return {number}
+     */
+    function IEVersion () {
+      var userAgent = navigator.userAgent; // 取得浏览器的userAgent字符串
+      var isIE = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1; // 判断是否IE<11浏览器
+      if (isIE) {
+        var reIE = new RegExp('MSIE (\\d+\\.\\d+);');
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp['$1']);
+        if (fIEVersion === 7) {
+          return 7;
+        } else if (fIEVersion === 8) {
+          return 8;
+        } else if (fIEVersion === 9) {
+          return 9;
+        } else if (fIEVersion === 10) {
+          return 10;
+        } else {
+          return 6; // IE版本<=7
+        }
+      }
+      return 100;
+    }
+    // 如果是IE10以下的浏览器将直接跳转到浏览器升级页面,否则进入主页
+    (function (windows) {
+      try {
+        if (IEVersion() < 10) {
+          window.location.href='./browse.html';
+        }
+      } catch (f) {
+        console.log(f);
+      }
+    }(window));
+  </script>
+</head>
+<body>
+<noscript>
+  <strong>We're sorry but test doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+</body>
+</html>
