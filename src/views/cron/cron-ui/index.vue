@@ -1,5 +1,5 @@
 <template>
-  <el-dialog custom-class="cron-box-dialog" :visible.sync="dialogVisible">
+  <el-dialog custom-class="cron-box-dialog" :visible.sync="dialogVisible" v-if="dialogVisible">
     <div slot="title" style="font-size:16px;color:#666666;">cron表达式生成器</div>
     <el-tabs tab-position="left" style="height: 300px;" v-model="activeName">
       <el-tab-pane label="快捷生成" name="first">
