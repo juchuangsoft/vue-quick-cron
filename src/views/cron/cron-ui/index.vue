@@ -1,7 +1,7 @@
 <template>
-  <el-dialog custom-class="cron-box-dialog" :visible.sync="dialogVisible" v-if="dialogVisible">
+  <el-dialog custom-class="cron-box-dialog-first" :visible.sync="dialogVisible" v-if="dialogVisible">
     <div slot="title" style="font-size:16px;color:#666666;">cron表达式生成器</div>
-    <el-tabs tab-position="left" style="height: 300px;" v-model="activeName">
+    <el-tabs tab-position="left" style="height: 310px;" v-model="activeName">
       <el-tab-pane label="快捷生成" name="first">
         <CronDefault ref="CronDefault" v-if="activeName == 'first'"></CronDefault>
       </el-tab-pane>
@@ -46,21 +46,21 @@ export default {
 };
 </script>
 <style lang="css">
-.cron-box-dialog {
+.cron-box-dialog-first {
   width: 700px;
 }
-.cron-box-dialog .el-dialog__header {
+.cron-box-dialog-first .el-dialog__header {
   padding: 10px;
   text-align: center;
 }
-.cron-box-dialog .el-dialog__header .el-dialog__headerbtn {
+.cron-box-dialog-first .el-dialog__header .el-dialog__headerbtn {
   top: 12px;
   right: 8px;
 }
-.cron-box-dialog .el-dialog__body {
+.cron-box-dialog-first .el-dialog__body {
   padding: 0 10px;
 }
-.cron-box-dialog .el-dialog__footer {
+.cron-box-dialog-first .el-dialog__footer {
   padding: 10px;
   text-align: center;
 }
